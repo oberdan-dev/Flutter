@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
   void _calculate() {
     setState(() {
       double weight = double.parse(weightController.text);
-      double height = double.parse(heightController.text) / 100;
+      double height = double.parse(heightController.text);
       double imc = weight / (height * height);
       _showResult(imc);
     });
@@ -85,7 +85,8 @@ class _HomeState extends State<Home> {
                     color: Colors.green,
                   ),
                   TextFormField(
-                      keyboardType: TextInputType.number,
+                      keyboardType:
+                          TextInputType.numberWithOptions(decimal: true),
                       decoration: InputDecoration(
                           labelText: "Peso (kg)",
                           labelStyle: TextStyle(color: Colors.green)),
@@ -98,9 +99,10 @@ class _HomeState extends State<Home> {
                         }
                       }),
                   TextFormField(
-                      keyboardType: TextInputType.number,
+                      keyboardType:
+                          TextInputType.numberWithOptions(decimal: true),
                       decoration: InputDecoration(
-                          labelText: "Altura (cm)",
+                          labelText: "Altura (m)",
                           labelStyle: TextStyle(color: Colors.green)),
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.green, fontSize: 25.0),
@@ -116,7 +118,7 @@ class _HomeState extends State<Home> {
                       height: 50.0,
                       child: RaisedButton(
                         onPressed: () {
-                          if(_formKey.currentState.validate()){
+                          if (_formKey.currentState.validate()) {
                             _calculate();
                           }
                         },
