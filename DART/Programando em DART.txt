@@ -1,0 +1,83 @@
+
+
+void main() {
+
+//   VARIÁVEIS:
+//   Dynamic é uma variável que pode assumir qualquer tipo 
+  String variavel = 'String, bool, int, double, dynamic';
+
+//   Prints e concatenações:
+  print(variavel);
+  print(variavel + ': são os tipos de variáveis em DART');
+  print('$variavel: são os tipos de variáveis em DART');
+
+//   OPERADORES:
+//   Aritméticos:
+//   + - * /
+  
+//   Lógicos (booleanos):
+//   && || !
+  
+//   Comparações:
+//   > < >= <= == !=
+  
+//   CONDICIONAIS:
+//   If:
+//   if (condição 1) {
+//   ...
+//   } else if (condição 2) {
+//   ...
+//   } else {
+//   ...
+//   }
+  
+//   If ternário:
+//   tipo variável = condição ? ação verdadeira : ação falsa;
+  
+//   Teste se variável é nula (Se nula, printa o "vazio", senão printa o valor):
+//   tipo variável;
+//   print(variável ?? "vazio") 
+  
+//   SWITCH:
+//   tipo variável = valor;
+//   switch(variável){
+//   case valor1: ação;
+//   break;
+//   case valor2: ação;
+//   break;
+//   case valor3: ação;
+//   break;
+//   default: ação;
+//   }
+
+//   FOR:
+//   for(int variável = limite inferior; variável < limite superior; variável++) {
+//   ação envolvendo variável;
+//   }
+
+//   WHILE:
+//   while(int variável < limite superior) {
+//   ação envolvendo variável;
+//   variável++;
+//   }
+
+//   FUNÇÕES:
+//   Chamada de funções:
+//   função(parâmetro 1: valor, parâmetro 2: valor, ...);
+  
+//   versão clássica:
+//   tipo função (tipo parâmetro 1, tipo parâmetro 2, ...){
+//   return ação com os parâmetros;
+//   }
+  
+//   versão simplificada de uma linha:
+//   => (return)
+//   tipo função (tipo parâmetro 1, tipo parâmetro 2, ...) => ação com os parâmetros;
+  
+//   versão com parâmetros opcionais:
+//   na chamada da função pode-se passar os parâmetros que desejar
+//   tipo função ({tipo parâmetro 1, tipo parâmetro 2, ...}){
+//   return ação com os parâmetros;
+//   }
+  
+}
