@@ -1,0 +1,60 @@
+// CLASSE:
+// class nome_da_classe {
+
+//   tipo variável;
+//   tipo variável;
+//   tipo variável;
+
+// ATRIBUTOS ESTÁTICOS, CONSTANTES E VALORES FINALS:
+// static tipo variável;
+// const nome = valor;
+// final nome = classe(valores dos parâmetros);
+
+// LISTAS:
+// AÇÕES:
+// (CRIAR) List<tipo> nome = [valor 1, valor 2, ...];
+// (PRINTAR) print(nome[indice]);
+// (REMOVER) nome.removeAt(indice);
+// (ADICIONAR) nome.add('novo valor');
+
+// MAPAS:
+// Map<tipo da key, tipo do value> nome = Map(); (map vazio)
+// nome['key 1'] = 'valor';
+// nome['key 2'] = 'valor';
+// AÇÕES:
+// print(nome.keys);
+// print(nome.values);
+
+// CONSTRUTOR CONVENCIONAL:
+//   nome_da_classe(tipo parâmetro 1, tipo parâmetro 2, ...){
+//     this.parâmetro 1 = parâmetro 1;
+//     this.parâmetro 2 = parâmetro 2;
+//   }
+
+// CONSTRUTOR RESUMIDO:
+//   nome_da_classe(this.parâmetro 1, this.parâmetro 2, ...)
+
+// MÉTODO:
+// tipo método(){
+// ação do método envolvendo algum parâmetro da classe;
+// }
+
+// OBJETO:
+// new é OPCIONAL (não iremos usar!)
+// classe objeto = new classe(valor de cada parâmetro);
+
+// }
+
+// HERANÇA DE CLASSES:
+// class nome_da_classe_herdeira extends nome_da_classe_herdada{
+
+//   CONSTRUTOR PARA A CLASSE HERDEIRA:
+//   nome_da_classe_herdeira(parâmetros da herdeira) : super(parâmetros da herdada);
+
+//   OVERRIDE NO MÉTODO (REESCRITA DE MÉTODO):
+//   @override
+//   tipo método(){
+//   nova ação do método envolvendo algum parâmetro da classe;
+//   }
+
+// }
