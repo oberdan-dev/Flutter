@@ -21,6 +21,7 @@ class _HomeState extends State<Home> {
   List _toDoList = [];
   Map<String, dynamic> _lastRemoved;
   int _lastRemovedPos;
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -42,7 +43,7 @@ class _HomeState extends State<Home> {
         newToDo['done'] = false;
         _toDoList.add(newToDo);
       } else {
-        Scaffold.of(context).showSnackBar(SnackBar(
+        _scaffoldKey.currentState.showSnackBar(SnackBar(
           content: Text("Insira um título para a tarefa!"),
           duration: Duration(seconds: 2),
         ));
@@ -71,6 +72,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text('Lista de tarefas'),
         backgroundColor: Colors.blueAccent,
