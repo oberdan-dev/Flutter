@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
     if (_search == null)
       return data.length;
     else
-      data.length + 1;
+      return data.length + 1;
   }
 
   Widget _createGifTable(BuildContext context, AsyncSnapshot snapshot) {
