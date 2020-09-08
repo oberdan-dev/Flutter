@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "397710941106",
+    "firebase_url": "https://flutter---loja-virtual.firebaseio.com",
+    "project_id": "flutter---loja-virtual",
+    "storage_bucket": "flutter---loja-virtual.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397710941106:android:ed98190ca575f903bf22ab",
+        "android_client_info": {
+          "package_name": "br.com.ocsantos.loja_virtual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397710941106-r4tik08dupvqol7oor9hpiucqegtt17v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-WcExQ8x9lri8Lg3RunAfMiVLTyp7nZ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397710941106-r4tik08dupvqol7oor9hpiucqegtt17v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
