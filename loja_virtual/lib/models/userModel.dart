@@ -37,7 +37,11 @@ class UserModel extends Model {
     });
   }
 
-  void signIn() async {
+  void signIn(
+      {@required String email,
+        @required String pass,
+        @required VoidCallback onSuccess,
+        @required VoidCallback onFail}) async {
     isLoading = true;
     notifyListeners();
 

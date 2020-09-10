@@ -40,6 +40,7 @@ class _SignupScreenState extends State<SignupScreen> {
               padding: EdgeInsets.all(16.0),
               children: <Widget>[
                 TextFormField(
+                  controller: _nameController,
                   decoration: InputDecoration(
                     hintText: 'Nome completo',
                   ),
@@ -50,8 +51,20 @@ class _SignupScreenState extends State<SignupScreen> {
                 SizedBox(
                   height: 16.0,
                 ),
-
                 TextFormField(
+                  controller: _addressController,
+                  decoration: InputDecoration(
+                    hintText: 'Endereço',
+                  ),
+                  validator: (text) {
+                    if (text.isEmpty) return 'Endereço inválido!';
+                  },
+                ),
+                SizedBox(
+                  height: 16.0,
+                ),
+                TextFormField(
+                  controller: _emailController,
                   decoration: InputDecoration(
                     hintText: 'E-mail',
                   ),
@@ -65,6 +78,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   height: 16.0,
                 ),
                 TextFormField(
+                  controller: _passwordController,
                   decoration: InputDecoration(
                       hintText: 'Senha',
                       suffixIcon: IconButton(
@@ -83,18 +97,6 @@ class _SignupScreenState extends State<SignupScreen> {
                       return 'Senha Inválida';
                   },
                 ),
-                SizedBox(
-                  height: 16.0,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: 'Endereço',
-                  ),
-                  validator: (text) {
-                    if (text.isEmpty) return 'Endereço inválido!';
-                  },
-                ),
-
                 SizedBox(
                   height: 64.0,
                 ),
