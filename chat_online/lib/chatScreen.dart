@@ -49,6 +49,7 @@ class _ChatScreenState extends State<ChatScreen> {
           await FirebaseAuth.instance.signInWithCredential(credential);
 
       final FirebaseUser user = authResult.user;
+      return user;
     } catch (error) {
       return null;
     }
