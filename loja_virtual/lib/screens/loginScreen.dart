@@ -9,6 +9,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   final _formKey = GlobalKey<FormState>();
 
   bool _obscureText = true;
@@ -16,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
         appBar: AppBar(
           title: Text('Entrar'),
           centerTitle: true,
@@ -35,7 +40,8 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ],
         ),
-        body: ScopedModelDescendant<UserModel>(builder: (context, child, model) {
+        body:
+            ScopedModelDescendant<UserModel>(builder: (context, child, model) {
           if (model.isLoading)
             return Center(
               child: CircularProgressIndicator(),
@@ -51,6 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: 250.0,
                 ),
                 TextFormField(
+                  controller: _emailController,
                   decoration: InputDecoration(
                     hintText: 'E-mail',
                   ),
@@ -64,6 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 16.0,
                 ),
                 TextFormField(
+                  controller: _passwordController,
                   decoration: InputDecoration(
                       hintText: 'Senha',
                       suffixIcon: IconButton(
@@ -85,7 +93,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 Align(
                   alignment: Alignment.centerRight,
                   child: FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if(_emailController.text.isEmpty)
+                        _scaffoldKey.currentState.showSnackBar(SnackBar(
+                          content: Text('Insira um email para recuperação!'),
+                          backgroundColor: Colors.redAccent,
+                          duration: Duration(seconds: 2),
+                        ));
+                      else {
+                        model.recoverPassword(_emailController.text);
+                        _scaffoldKey.currentState.showSnackBar(SnackBar(
+                          content: Text('Confira seu email!'),
+                          backgroundColor: Theme.of(context).primaryColor,
+                          duration: Duration(seconds: 2),
+                        ));
+                      }
+                    },
                     child: Text(
                       'Esqueci minha senha',
                       textAlign: TextAlign.right,
@@ -94,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 64.0,
+                  height: 34.0,
                 ),
                 SizedBox(
                   height: 44.0,
@@ -109,13 +132,28 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Theme.of(context).primaryColor,
                       onPressed: () {
                         if (_formKey.currentState.validate()) {}
-
-                        model.signIn();
+                        model.signIn(
+                            email: _emailController.text.trim(),
+                            pass: _passwordController.text.trim(),
+                            onSuccess: _onSuccess,
+                            onFail: _onFail);
                       }),
                 ),
               ],
             ),
           );
         }));
+  }
+
+  void _onSuccess() {
+      Navigator.of(context).pop();
+    }
+
+  void _onFail() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Falha ao fazer login!'),
+      backgroundColor: Colors.redAccent,
+      duration: Duration(seconds: 2),
+    ));
   }
 }
